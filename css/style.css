@@ -1,0 +1,229 @@
+@font-face {
+    font-family: Novecentos;
+    src: url(../fonts/Novecentosanswide-Bold.otf);
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Raleway;
+    src: url(../fonts/Raleway-Regular.ttf) format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: CustomIcons;
+    src: url(../fonts/fontcustom.woff);
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    background: #3c3c3c;
+    font: normal normal 18px/1.8em Raleway,sans-serif;
+    color: #3f3f3f;
+}
+
+.navbar {
+    background-color: #f0f1f5;
+    margin-top: 20px;
+}
+
+.navbar-nav {
+    top: 20px;
+    background-color: #f0f1f5;
+}
+
+.navbar-nav li {
+    text-align: center;
+    border-left: 1px solid #e0e0e0;
+}
+
+.navbar-nav li:first-child {
+    text-align: center;
+    border: none;
+}
+
+.nav-link {
+    font-style: normal;
+    font-weight: 400;
+    font-family: Novecentos;
+    color: #c7cbd4;
+    font-size: 16px;
+}
+
+.nav-item i {
+    display: none;
+}
+
+.sidebar{
+    width: 100%;
+    display: block;
+    margin: 0;
+    background-color: #555c70;
+    color: #fff;
+    padding: 15px 20px;
+}
+
+.content {
+    background-color: #fff;
+}
+
+h1 {
+    font: normal normal 1.8em Novecentos;
+    opacity: .55;
+}
+
+h2 {
+    margin: 0;
+    z-index: 1;
+    overflow: hidden;
+    background: #00bdbd;
+    color: #fff;
+    font: normal normal 1.3em Novecentos;
+    text-transform: uppercase;
+    line-height: 75px;
+    padding-left: 45px;
+    padding-right: 70px;
+    line-height: 60px;
+}
+
+.sidebar ul.about {
+    color: #fff;
+    font: normal normal 1em Raleway,sans-serif;
+    opacity: .5;
+    list-style: none;
+    padding-left: 0;
+    line-height: 2em;
+}
+
+.sidebar ul.external-links {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    display: table;
+}
+
+.sidebar ul.external-links li {
+    display: inline;
+    margin: 0.5em;
+    font-size: 1.5em;
+}
+
+.sidebar a {
+    color: #c7cbd4
+}
+
+.fa-had {
+    font-family: 'CustomIcons';
+}
+
+.fa-had:before {
+    content: '\f15c';
+}
+
+.fa-had:hover{
+    color: #c4aa6e;
+}
+
+.fa-twitter:hover{
+    color: #55acee;
+}
+
+.fa-github:hover{
+    color: #999;
+}
+
+.fa-linkedin-in:hover{
+    color: #0077b5;
+}
+
+@media (min-width: 992px) {
+    
+    .navbar{
+        padding: .5rem 2em 0 2em;
+    }
+
+    .navbar-nav {
+        background-color: transparent;
+        height: 220px;
+        display: block;
+        height: 160px;
+        z-index: 3;
+    }
+    
+    .navbar-nav li {
+        display: inline-block;
+        margin: 0;
+        text-align: center;
+        height: 100%;
+        width: 150px;
+    }
+    
+    .navbar-expand-lg .navbar-nav .nav-link{
+        margin: 20px;
+        padding-left: 0;
+        padding-right: 0;
+        text-transform: uppercase;
+    }
+
+    .nav-link i {
+        color: #c7cbd4;
+        display: block;
+        padding: 0;
+        margin: auto;
+        padding: 0.5em 0;
+        transition: all 0.5s;
+        border-radius: 2em;
+        width: 2.5em;
+        height: 2.5em;
+    }
+
+    .nav-link:hover i {
+        background-color: #abb3c7;
+        color: #f0f1f5;
+        display: block;
+        padding: 0.7em;
+    }
+
+    .nav-item.active .nav-link i {
+        background-color: #707a94;
+        border-radius: 2em;
+        padding: 0.7em;
+        color: #00d4d4;
+        display: block;
+    }
+
+    .nav-slider {
+        display: block;
+        width: 150px;
+        height: 170px;
+        margin-top: -15px;
+        z-index: 2;
+        position: absolute;
+        background-color: #e4e5eb;
+    }
+    
+    .col-lg-4{
+        padding-right: 0;
+    }
+
+    .col-lg-8{
+        padding-left: 0;
+    }
+
+    .sidebar {
+        top: 168px;
+        padding-top: 45px;
+        padding-bottom: 45px;
+    }
+    
+    h2.sticky-top {
+        top: 168px;
+    }
+
+    .sidebar ul.external-links {
+        margin-top: 6em;
+    }
+}
