@@ -28,6 +28,7 @@ body {
 .navbar {
     background-color: #f0f1f5;
     margin-top: 20px;
+    z-index: 1050;
 }
 
 .navbar-nav {
@@ -96,7 +97,7 @@ h2 {
     position: -webkit-sticky;
     position: sticky;
     top: 56px;
-    z-index: 1020;
+    z-index: 1030;
     background: #00bdbd;
     color: #fff;
     font-family: Novecentos;
@@ -124,20 +125,21 @@ h3 {
     padding-right: 70px;
 }
 
-h3.collapsable button {
+h3.collapsable .collapse-icon {
     background: none;
     border: none;
+    font-style: normal;
     float: right;
 }
 
-h3.collapsable button::before {
+h3.collapsable .collapse-icon::before {
     font-family: 'Font Awesome 5 Free';
     font-weight: 900;
     color: #abaeba;
     content: '\f146';
 }
 
-h3.collapsable button.collapsed::before {
+h3.collapsable.collapsed .collapse-icon::before {
     content: '\f0fe';
 }
 
@@ -162,14 +164,16 @@ article p {
 
 .sidebar ul.external-links {
     list-style: none;
+    margin: 2em auto;
     padding: 0;
-    margin: 0 auto;
-    display: table;
+    position: absolute;
+    bottom: 0;
+    right: 0;
 }
 
 .sidebar ul.external-links li {
-    display: inline;
-    margin: 0.5em;
+    display: inline-block;
+    margin: auto 1em;
     font-size: 1.5em;
 }
 
@@ -201,21 +205,8 @@ article p {
     color: #0077b5;
 }
 
-.img-profile {
-    height: 200px;
-    width: 200px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin: 0;
-    padding: 0;
+.sidebar #sidebar-profile-img {
     display: none;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0px;
-    z-index: 1030;
-    transition: all 0.5s;
-    background-color: #fff;
-    border: 1px solid #dee2e6;
 }
 
 #about {
@@ -227,7 +218,7 @@ article p {
     padding-bottom: 0;
 }
 
-#profile-img {
+#content-profile-img {
     width: 40%;
     max-width: 500px;
     margin: 1rem;
@@ -240,7 +231,7 @@ article p {
     transition: all 0.5s;
 }
 
-#profile-img.docked{
+#content-profile-img.docked{
     position: absolute;
     height: 200px;
     border-radius: 50%;
@@ -265,6 +256,10 @@ img#signature-img {
 .timeline-entry {
     margin: 0 15px;
     border-bottom: solid 1px #d8d9db;
+}
+
+.timeline-entry:last-of-type {
+    border-bottom: none;
 }
 
 .timeline-entry p:first-of-type {
@@ -442,7 +437,7 @@ img#signature-img {
         height: 220px;
         display: block;
         height: 160px;
-        z-index: 3;
+        z-index: 1030;
     }
     
     .navbar-nav li {
@@ -492,9 +487,12 @@ img#signature-img {
         width: 150px;
         height: 170px;
         margin-top: -15px;
-        z-index: 2;
+        z-index: 1020;
         position: absolute;
         background-color: #e4e5eb;
+        left: 28px;
+        margin-left: 2.5px;
+        transition: all 0.5s;
     }
 
     .col-lg-4{
@@ -512,13 +510,21 @@ img#signature-img {
         height: 70vh;
     }
 
+    .sidebar ul.external-links {
+        left: 0;
+        text-align: center;
+    }
+
+    .sidebar ul.external-links li {
+        margin-bottom: 1em;
+    }
+
     .content {
         height: 70vh;
         overflow-y: scroll;
         overflow-x: hidden;
         display: flex;
         flex-wrap: nowrap;
-        transition: all 0.5s;
     }
 
     article {
@@ -527,8 +533,12 @@ img#signature-img {
         max-height: 70vh;
         overflow-y: scroll;
         position: relative;
-        transition: all 0.5s;
+        transition: left 0.5s;
         left: 0;
+    }
+
+    .sidebar > * {
+        transition: all 0.5s;
     }
 
     .sidebar ul.external-links {
@@ -537,6 +547,10 @@ img#signature-img {
 
     h2 {
         top: 0;
+    }
+
+    h3 {
+        top: 75px;
     }
 
     article p {
@@ -551,29 +565,33 @@ img#signature-img {
         padding-bottom: 3em;
     }
 
-    #profile-img.docked{
+    .sidebar #sidebar-profile-img {
         display: block;
-        top: 212px;
-        margin-left: -296px;
+        height: 200px;
+        opacity: 0;
+        width: 200px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin: 0 auto;
+        padding: 0;
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0px;
+        z-index: 1030;
+        transition: all 0.5s;
+        background-color: #fff;
+        border: 1px solid #dee2e6;
     }
 
-    .sidebar.docked .img-profile{
-        display: block;
-        margin-left: 50px;
-    }
-}
-
-
-@media (min-width: 992px) and (max-width: 1200px) {
-    #profile-img.docked{
-        display: block;
-        margin-left: -255px;
-        top: 214px;
-        margin-top: -30px;
+    .sidebar.profile-img #sidebar-profile-img {
+        opacity: 1;
     }
 
-    .sidebar.docked .img-profile{
-        display: block;
-        margin-left: 30px;
+    .sidebar h1 {
+        margin-top: -200px;
+    }
+
+    .sidebar.profile-img h1 {
+        margin-top: 20px;
     }
 }
