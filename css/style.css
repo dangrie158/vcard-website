@@ -481,10 +481,6 @@ img#signature-img {
     content: 'Published in: ';
 }
 
-#publications .year::before {
-    content: 'Year: ';
-}
-
 #publications .abstract::before {
     content: 'Abstract: ';
 }
@@ -510,7 +506,7 @@ img#signature-img {
     padding-left: 3em;
     padding-right: 3em;
     top: auto;
-    bottom: -50%;
+    bottom: 0%;
     left: 0;
     right: 0;
     background-color: #555c7065;
@@ -740,5 +736,13 @@ img#signature-img {
 
     .sidebar.profile-img h1 {
         margin-top: 20px;
+    }
+
+    #projects .project .info {
+        bottom: -50%;
+    }
+    
+    #projects .project:hover .info {
+        bottom: 0;
     }
 }
