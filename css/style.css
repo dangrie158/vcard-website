@@ -79,8 +79,13 @@ article.full-color {
     color: #fff;
 }
 
+article.full-color a {
+    color: #e4e5eb;
+}
+
 h1 {
-    font: normal normal 1.8em Novecentos;
+    font-family: Novecentos;
+    font-size: 1.8em;
     opacity: .55;
 }
 
@@ -94,7 +99,8 @@ h2 {
     z-index: 1020;
     background: #00bdbd;
     color: #fff;
-    font: normal normal 1.3em Novecentos;
+    font-family: Novecentos;
+    font-size: 1.3em;
     text-transform: uppercase;
     line-height: 75px;
     padding-left: 45px;
@@ -146,7 +152,7 @@ article p {
 
 .sidebar ul.about {
     color: #fff;
-    font: normal normal 1em Raleway,sans-serif;
+    font: normal normal 1em;
     opacity: .5;
     list-style: none;
     padding-left: 0;
@@ -212,10 +218,19 @@ article p {
     border: 1px solid #dee2e6;
 }
 
+#about {
+    padding-bottom: 2em;
+}
+
+#about p {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
 #profile-img {
     width: 40%;
     max-width: 500px;
-    margin: 3rem;
+    margin: 1rem;
     padding: .5rem;
     background-color: #fff;
     border: 1px solid #dee2e6;
@@ -271,18 +286,18 @@ img#signature-img {
 
 .timeline-entry .date .from-to {
     color: #d8d9db;
-    font: normal 800 1.2em Raleway,sans-serif;
+    font: normal 800 1.2em;
     padding-top: 1em;
 }
 
 .timeline-entry .date .info {
     color: #626262;
-    font: normal 800 0.8em Raleway,sans-serif;
+    font: normal 800 0.8em;
 }
 
 .timeline-entry .date .location {
     color: #626262;
-    font: normal 700 0.8em Raleway,sans-serif;
+    font: normal 700 0.8em;
     margin-bottom: 0;
     padding-bottom: 0;
 }
@@ -290,7 +305,8 @@ img#signature-img {
 .timeline-entry .task .title {
     margin-bottom: 20px;
     color: #626262;
-    font: normal 800 1.2em Raleway,sans-serif;
+    font-size: 1.2em;
+    font-weight: bold;
 }
 
 .timeline-entry .task .title::after {
@@ -304,7 +320,115 @@ img#signature-img {
 }
 
 .timeline-entry .task .description {
-    font: normal normal 1em Raleway,sans-serif;
+    font: normal normal 1em;
+}
+
+.skill-section h4 {
+    color: #585858;
+    font-size: 1.1em;
+    font-weight: bold;
+    padding: 25px;
+    padding-bottom: 0;
+    border-top: 1px solid rgba(0,0,0,.1);
+}
+
+.skill-section h5 {
+    color: #585858;
+    font-size: 0.9em;
+    font-weight: bold;
+    padding: 25px;
+    padding-bottom: 0;
+    border-top: 1px solid rgba(0,0,0,.1);
+}
+
+#skill-languages .language {
+    display: inline-block;
+    width: 120px;
+}
+
+#skill-languages i.fa{
+    margin: 0 1em;
+}
+
+#skill-languages p {
+    text-align: center;
+}
+
+.skill-section i.fa.filled{
+    margin: 0 1em;
+    color: #00d4d4;
+}
+
+#skill-languages .level {
+    color: #cdcfd4;
+    font-size: 1.2em;
+    font-weight: bold;
+    width: 120px;
+    display: inline-block;
+    text-align: right;
+}
+
+#skill-programming-languages .progress-bar {
+    background-color: #00d4d4;
+}
+
+#skill-programming-languages p {
+    width: 49%;
+    display: inline-block;
+}
+
+#skill-knowledge p {
+    width: 32%;
+    display: inline-block;
+}
+
+#skill-knowledge .name {
+    display: block;
+}
+
+#skill-knowledge i.fa{
+    margin: 0 0.5em;
+}
+
+#cv-interests ul {
+    margin-top: 1.5rem;
+    list-style: none;
+}
+
+#cv-interests li {
+    display: inline-block;
+    width: 49%;
+    margin: 0.5rem 0;
+}
+
+#cv-interests li:before {
+    margin-right: 10px;
+    color: #00d4d4;
+    font-family: 'Font Awesome 5 Free';
+    font-size: 1.2em;
+    content: "\f058";
+}
+
+#cv-hobbies ul {
+    list-style: none;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5em;
+}
+
+#cv-hobbies li {
+    display: inline-block;
+    width: 49%;
+    color: #626262;
+    font-weight: bold;
+    margin: 0.5rem 0;
+}
+
+#cv-hobbies .fa {
+    margin-right: 10px;
+    font-size: 1.2em;
+    width: 40px;
+    color: #abaeba;
+    font-size: 2em;
 }
 
 @media (min-width: 992px) {
@@ -381,6 +505,31 @@ img#signature-img {
         padding-left: 0;
     }
 
+    .sidebar {
+        top: 168px;
+        padding-top: 45px;
+        padding-bottom: 45px;
+        height: 70vh;
+    }
+
+    .content {
+        height: 70vh;
+        overflow-y: scroll;
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    article {
+        flex: 0 0 100%;
+        max-width: 100%;
+        max-height: 70vh;
+        overflow: scroll;
+    }
+
+    .sidebar ul.external-links {
+        margin-top: 6em;
+    }
+
     article p {
         padding: 1em 3em 1em 3em;
     }
@@ -391,24 +540,6 @@ img#signature-img {
     
     article p:last-of-type {
         padding-bottom: 3em;
-    }
-
-    .sidebar {
-        top: 168px;
-        padding-top: 45px;
-        padding-bottom: 45px;
-    }
-    
-    h2 {
-        top: 168px;
-    }
-
-    h3 {
-        top: 243px;
-    }
-
-    .sidebar ul.external-links {
-        margin-top: 6em;
     }
 
     #profile-img.docked{
