@@ -345,17 +345,12 @@ img#signature-img {
     width: 120px;
 }
 
-#skill-languages i.fa{
-    margin: 0 1em;
+.skill-section i.fa.filled{
+    color: #00d4d4;
 }
 
 #skill-languages p {
     text-align: center;
-}
-
-.skill-section i.fa.filled{
-    margin: 0 1em;
-    color: #00d4d4;
 }
 
 #skill-languages .level {
@@ -383,10 +378,6 @@ img#signature-img {
 
 #skill-knowledge .name {
     display: block;
-}
-
-#skill-knowledge i.fa{
-    margin: 0 0.5em;
 }
 
 #cv-interests ul {
@@ -423,7 +414,7 @@ img#signature-img {
 }
 
 #cv-hobbies .fa {
-    margin-right: 10px;
+    margin-right: 0;
     font-size: 1.2em;
     width: 40px;
     color: #abaeba;
@@ -708,6 +699,13 @@ img#signature-img {
         padding-bottom: 3em;
     }
 
+    .skill-section i.fa{
+        margin: 0 3%;
+    }
+    #cv-hobbies .fa {
+        margin-right: 10px;
+    }
+
     .sidebar #sidebar-profile-img {
         display: block;
         height: 200px;
@@ -746,3 +744,10 @@ img#signature-img {
         bottom: 0;
     }
 }
+
+.notransition {
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -o-transition: none !important;
+    transition: none !important;
+  }

@@ -3,6 +3,9 @@
 let navItems = $('.nav-item');
 let pages = $('article');
 
+// start with the home page
+let currentPage = 0;
+
 navItems.on('click', (event) => {
     let clickedElement = $(event.currentTarget);
 
@@ -23,15 +26,9 @@ navItems.on('click', (event) => {
         sidebar.addClass('profile-img');
     }
 
-    // scroll the page
     let clickedIndex = navItems.index(clickedElement);
-    let offsetX = $(pages[clickedIndex]).position().left;
-    let offsetY = $(pages[clickedIndex]).position().top + ($('nav').height() - $('#navbarToggler').height());
-    pages.css('left', "-=" + offsetX);
-
-    //animate to the new offset
-    $('html, body').animate({ scrollTop: offsetY + 'px'});
-
+    currentPage = clickedIndex;
+    
     //stop the event otherwise bootstrap code will scroll to the top
     $('#navbarToggler').one('hide.bs.collapse', (event) => {
         event.stopPropagation();
@@ -40,4 +37,34 @@ navItems.on('click', (event) => {
         //manually hide the navigation
         $('#navbarToggler').collapse('hide');
     });
+
+    scrollToPage(clickedIndex, true);
+});
+
+function scrollToPage(pageIndex, animate) {
+    let offsetX = $(pages[pageIndex]).position().left;
+    let offsetY = $(pages[pageIndex]).position().top + ($('nav').height() - $('#navbarToggler').height());
+
+    // scroll the page horizontally
+    if(!animate){
+        pages.addClass('notransition');
+    }
+    
+    pages.css('left', "-=" + offsetX);
+
+    if(!animate){
+        pages.removeClass('notransition');
+    }
+
+    //animate to the new offset vertically
+    $('html, body').stop();
+    if(animate){
+        $('html, body').animate({ scrollTop: offsetY + 'px'});
+    }else{
+        $('html, body').css({ scrollTop: offsetY + 'px'});
+    }
+}
+
+$( window ).resize(function() {
+    scrollToPage(currentPage);
 });
