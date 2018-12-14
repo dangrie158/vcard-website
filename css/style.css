@@ -103,11 +103,11 @@ h2 {
     top: 56px;
     z-index: 1030;
     background: #00bdbd;
+    line-height: 75px;
     color: #fff;
     font-family: Novecentos;
     font-size: 1.3em;
     text-transform: uppercase;
-    line-height: 75px;
     padding-left: 45px;
     padding-right: 65px;
 }
