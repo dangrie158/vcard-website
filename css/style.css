@@ -103,7 +103,7 @@ h2 {
     top: 56px;
     z-index: 1030;
     background: #00bdbd;
-    line-height: 75px;
+    padding: 25px 0;
     color: #fff;
     font-family: Novecentos;
     font-size: 1.3em;
@@ -118,7 +118,7 @@ h3 {
     overflow: hidden;
     position: -webkit-sticky;
     position: sticky;
-    top: 130px;
+    top: 125px;
     z-index: 1020;
     background: #f2f4f7;
     color: #abaeba;
@@ -751,3 +751,13 @@ img#signature-img {
     -o-transition: none !important;
     transition: none !important;
   }
+
+@media (max-width: 450px) {
+    .sidebar ul.external-links {
+        position: relative;
+    }
+
+    .sidebar ul.external-links li {
+        margin: auto 0.75em;
+    }
+}
