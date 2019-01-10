@@ -425,6 +425,10 @@ img#signature-img {
     border-bottom: 1px solid #d8d9db;
 }
 
+#publications .col-md-5, #publications .col-md-7 {
+    padding: 0 2em;
+}
+
 #publications .row:last-child {
     border-bottom: none;
 }
@@ -684,7 +688,7 @@ img#signature-img {
     }
 
     h3 {
-        top: 75px;
+        top: 70px;
     }
 
     article p {
