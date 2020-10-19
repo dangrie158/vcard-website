@@ -490,6 +490,7 @@ img#signature-img {
     background-size: 100% auto;
     background-position-y: center;
     background-repeat: no-repeat;
+    background-color: #555c7065;
     width: 49%;
     padding-top: 49%;
     position: relative;
@@ -565,7 +566,7 @@ img#signature-img {
 }
 
 @media (min-width: 992px) {
-    
+
     .navbar{
         padding: .5rem 2em 0 2em;
     }
@@ -577,7 +578,7 @@ img#signature-img {
         height: 160px;
         z-index: 1030;
     }
-    
+
     .navbar-nav li {
         display: inline-block;
         margin: 0;
@@ -585,7 +586,7 @@ img#signature-img {
         height: 100%;
         width: 150px;
     }
-    
+
     .navbar-expand-lg .navbar-nav .nav-link{
         margin: 20px;
         padding-left: 0;
@@ -697,8 +698,8 @@ img#signature-img {
 
     article p:first-of-type {
         padding-top: 3em;
-    }    
-    
+    }
+
     article p:last-of-type {
         padding-bottom: 3em;
     }
@@ -743,7 +744,7 @@ img#signature-img {
     #projects .project .info {
         bottom: -50%;
     }
-    
+
     #projects .project:hover .info {
         bottom: 0;
     }
